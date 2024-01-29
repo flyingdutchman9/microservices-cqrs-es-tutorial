@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "78b9b4cd-344f-4ad0-b58d-eeb992c67d09",
+		"name": "Microservices with Kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32472851"
+	},
+	"item": [
+		{
+			"name": "Post.Cmd.Api - NewPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"George Bush 47\",\r\n    \"message\": \"Ovo je porukaz 47\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/newPost",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"newPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - Base64 Decode Array (nepotrebno)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AxStfApHjE23mwk1noOuTQ==\",\r\n    \"CyNBt8AL4E++0wUYXQpUrQ==\",\r\n    \"AAAAAAAAAAAAAAAAAAAAAA==\",\r\n    \"eo4HwoH2t0+VFdFhz/x5Lw==\",\r\n    \"vA+1D2Hr9E2RxktXLdCROw==\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/Base64Decode/decodeArray",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"Base64Decode",
+						"decodeArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - Base64 Decode JsonData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"_id\": \"65af81f5ee63faff7c878e14\",\r\n    \"TimeStamp\": \"2024-01-23T09:08:05.956Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 0,\r\n    \"EventType\": \"PostCreatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostCreatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 0,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Author\": \"George Bush 46\",\r\n      \"Message\": \"This is latest message before the midnight\",\r\n      \"DatePosted\": \"2024-01-23T09:08:05.658Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65af820dee63faff7c878e15\",\r\n    \"TimeStamp\": \"2024-01-23T09:08:29.006Z\",\r\n    \"AggregateIdentifier\": \"CyNBt8AL4E++0wUYXQpUrQ==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 0,\r\n    \"EventType\": \"PostCreatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostCreatedEvent\",\r\n      \"_id\": \"CyNBt8AL4E++0wUYXQpUrQ==\",\r\n      \"Version\": 0,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Author\": \"George Bush 47\",\r\n      \"Message\": \"Ovo je porukaz 47\",\r\n      \"DatePosted\": \"2024-01-23T09:08:28.996Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65af820fee63faff7c878e16\",\r\n    \"TimeStamp\": \"2024-01-23T09:08:31.657Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 1,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 1,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65af8379ee63faff7c878e17\",\r\n    \"TimeStamp\": \"2024-01-23T09:14:33.760Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 2,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 2,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message 2\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65affc519a0428e7d2e6e31a\",\r\n    \"TimeStamp\": \"2024-01-23T17:50:09.573Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 3,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 3,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message 3\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65affdd99a0428e7d2e6e31b\",\r\n    \"TimeStamp\": \"2024-01-23T17:56:41.193Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 4,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 4,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message 3\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b022779a0428e7d2e6e31c\",\r\n    \"TimeStamp\": \"2024-01-23T20:32:55.441Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 5,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 5,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message 3\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b0244a0d6cc1b1421b7680\",\r\n    \"TimeStamp\": \"2024-01-23T20:40:42.578Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 6,\r\n    \"EventType\": \"MessageUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"MessageUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 6,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Message\": \"This is edited message 3\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b0350fa45ca13e1e3602b3\",\r\n    \"TimeStamp\": \"2024-01-23T21:52:15.204Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 7,\r\n    \"EventType\": \"PostLikedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostLikedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 7,\r\n      \"Type\": \"PostLikedEvent\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b03587a45ca13e1e3602b4\",\r\n    \"TimeStamp\": \"2024-01-23T21:54:15.654Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 8,\r\n    \"EventType\": \"PostLikedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostLikedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 8,\r\n      \"Type\": \"PostLikedEvent\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b03588a45ca13e1e3602b5\",\r\n    \"TimeStamp\": \"2024-01-23T21:54:16.871Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 9,\r\n    \"EventType\": \"PostLikedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostLikedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 9,\r\n      \"Type\": \"PostLikedEvent\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b035e1a45ca13e1e3602b6\",\r\n    \"TimeStamp\": \"2024-01-23T21:55:45.094Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 10,\r\n    \"EventType\": \"PostLikedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostLikedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 10,\r\n      \"Type\": \"PostLikedEvent\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b0d9774f53f05b7025cb51\",\r\n    \"TimeStamp\": \"2024-01-24T09:33:43.412Z\",\r\n    \"AggregateIdentifier\": \"eo4HwoH2t0+VFdFhz/x5Lw==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 0,\r\n    \"EventType\": \"PostCreatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostCreatedEvent\",\r\n      \"_id\": \"eo4HwoH2t0+VFdFhz/x5Lw==\",\r\n      \"Version\": 0,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Author\": \"George Bush 47\",\r\n      \"Message\": \"Ovo je porukaz 47\",\r\n      \"DatePosted\": \"2024-01-24T09:33:43.147Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b0e7414f53f05b7025cb52\",\r\n    \"TimeStamp\": \"2024-01-24T10:32:33.466Z\",\r\n    \"AggregateIdentifier\": \"vA+1D2Hr9E2RxktXLdCROw==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 0,\r\n    \"EventType\": \"PostCreatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostCreatedEvent\",\r\n      \"_id\": \"vA+1D2Hr9E2RxktXLdCROw==\",\r\n      \"Version\": 0,\r\n      \"Type\": \"PostCreatedEvent\",\r\n      \"Author\": \"George Bush 47\",\r\n      \"Message\": \"Ovo je porukaz 47\",\r\n      \"DatePosted\": \"2024-01-24T10:32:33.438Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b16ba4ad0e19296f9d51f3\",\r\n    \"TimeStamp\": \"2024-01-24T19:57:24.065Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 11,\r\n    \"EventType\": \"CommentAddedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentAddedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 11,\r\n      \"Type\": \"CommentAddedEvent\",\r\n      \"CommentId\": \"AxStfApHjE23mwk1noOuTQ==\",\r\n      \"Comment\": \"Ovo je novi komentar\",\r\n      \"Username\": \"George Bush 47\",\r\n      \"CommentDate\": \"2024-01-24T19:57:24.050Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b16d88d74cc339b59d997d\",\r\n    \"TimeStamp\": \"2024-01-24T20:05:28.163Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 12,\r\n    \"EventType\": \"CommentAddedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentAddedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 12,\r\n      \"Type\": \"CommentAddedEvent\",\r\n      \"CommentId\": \"19vJx0Bdb0moNKfvAfqPbQ==\",\r\n      \"Comment\": \"Ovo je novi komentar\",\r\n      \"Username\": \"George Bush 47\",\r\n      \"CommentDate\": \"2024-01-24T20:05:28.146Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b187e76934f7780d037b0d\",\r\n    \"TimeStamp\": \"2024-01-24T21:57:59.020Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 13,\r\n    \"EventType\": \"CommentUpdatedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentUpdatedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 13,\r\n      \"Type\": \"CommentUpdatedEvent\",\r\n      \"CommentId\": \"AxStfApHjE23mwk1noOuTQ==\",\r\n      \"CommentText\": \"Ovo je novi komentar editirani\",\r\n      \"Username\": \"George Bush 47\",\r\n      \"EditDate\": \"2024-01-24T21:57:59.012Z\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b24139514495bcd756029a\",\r\n    \"TimeStamp\": \"2024-01-25T11:08:41.407Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 14,\r\n    \"EventType\": \"CommentRemovedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentRemovedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 14,\r\n      \"Type\": \"CommentRemovedEvent\",\r\n      \"CommentId\": \"zTo2ZuH7FUuH5YY+B8yhvA==\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b2482a904eef455c8915ed\",\r\n    \"TimeStamp\": \"2024-01-25T11:38:18.091Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 15,\r\n    \"EventType\": \"CommentRemovedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentRemovedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 15,\r\n      \"Type\": \"CommentRemovedEvent\",\r\n      \"CommentId\": \"AxStfApHjE23mwk1noOuTQ==\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b24885904eef455c8915ee\",\r\n    \"TimeStamp\": \"2024-01-25T11:39:49.811Z\",\r\n    \"AggregateIdentifier\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 16,\r\n    \"EventType\": \"CommentRemovedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"CommentRemovedEvent\",\r\n      \"_id\": \"zTo2ZuH7FUuH5YY+B8yhvA==\",\r\n      \"Version\": 16,\r\n      \"Type\": \"CommentRemovedEvent\",\r\n      \"CommentId\": \"AxStfApHjE23mwk1noOuTQ==\"\r\n    }\r\n  },\r\n  {\r\n    \"_id\": \"65b2bb574470377645deeae4\",\r\n    \"TimeStamp\": \"2024-01-25T19:49:34.390Z\",\r\n    \"AggregateIdentifier\": \"CyNBt8AL4E++0wUYXQpUrQ==\",\r\n    \"AggregateType\": \"PostAggregate\",\r\n    \"Version\": 1,\r\n    \"EventType\": \"PostRemovedEvent\",\r\n    \"EventData\": {\r\n      \"_t\": \"PostRemovedEvent\",\r\n      \"_id\": \"CyNBt8AL4E++0wUYXQpUrQ==\",\r\n      \"Version\": 1,\r\n      \"Type\": \"PostRemovedEvent\",\r\n      \"CommentId\": \"AAAAAAAAAAAAAAAAAAAAAA==\"\r\n    }\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/Base64Decode?flatten=true&orderLogicalSequence=true",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"Base64Decode"
+					],
+					"query": [
+						{
+							"key": "flatten",
+							"value": "true"
+						},
+						{
+							"key": "orderLogicalSequence",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - AddComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"George Bush 47\",\r\n    \"comment\": \"Ovo je novi komentar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/AddComment/66363acd-fbe1-4b15-87e5-863e07cca1bc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"AddComment",
+						"66363acd-fbe1-4b15-87e5-863e07cca1bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - Restore Read Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/RestoreReadDb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"RestoreReadDb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - EditComment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": \"7cad1403-470a-4d8c-b79b-09359e83ae4d\",\r\n    \"username\": \"George Bush 47\",\r\n    \"comment\": \"Ovo je novi komentar editirani\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/EditComment/66363acd-fbe1-4b15-87e5-863e07cca1bc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"EditComment",
+						"66363acd-fbe1-4b15-87e5-863e07cca1bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - RemoveComment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": \"7cad1403-470a-4d8c-b79b-09359e83ae4d\",\r\n    \"username\": \"George Bush 47\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/RemoveComment/66363acd-fbe1-4b15-87e5-863e07cca1bc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"RemoveComment",
+						"66363acd-fbe1-4b15-87e5-863e07cca1bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api - DeletePost",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"George Bush 47\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/DeletePost/b741230b-0bc0-4fe0-bed3-05185d0a54ad",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"DeletePost",
+						"b741230b-0bc0-4fe0-bed3-05185d0a54ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api -Edit Post Msg",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"This is edited message 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/editMessage/66363acd-fbe1-4b15-87e5-863e07cca1bc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"editMessage",
+						"66363acd-fbe1-4b15-87e5-863e07cca1bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Cmd.Api -Like Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/v1/likePost/66363acd-fbe1-4b15-87e5-863e07cca1bc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"v1",
+						"likePost",
+						"66363acd-fbe1-4b15-87e5-863e07cca1bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Query.Api - Reset Offset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7084/api/v1/KafkaOffsetReset",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7084",
+					"path": [
+						"api",
+						"v1",
+						"KafkaOffsetReset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Query.Api - GetAllPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7084/api/v1/PostLookup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7084",
+					"path": [
+						"api",
+						"v1",
+						"PostLookup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Query.Api - GetPostById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7084/api/v1/PostLookup/0fb50fbc-eb61-4df4-91c6-4b572dd0913b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7084",
+					"path": [
+						"api",
+						"v1",
+						"PostLookup",
+						"0fb50fbc-eb61-4df4-91c6-4b572dd0913b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Query.Api - GetPostByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7084/api/v1/PostLookup/author/George Bush 47",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7084",
+					"path": [
+						"api",
+						"v1",
+						"PostLookup",
+						"author",
+						"George Bush 47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post.Query.Api - GetWithLikes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7084/api/v1/PostLookup/withLikes/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7084",
+					"path": [
+						"api",
+						"v1",
+						"PostLookup",
+						"withLikes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  post_cmd_api:
+    image: mcr.microsoft.com/dotnet/aspnet:6.0
+    container_name: post_cmd_api
+    build:
+      context: .
+      dockerfile: dockerfile-post-cmd-api
+    ports:
+      - "8010:80" # Adjust the host port as needed
+    # environment:
+    #   - ASPNETCORE_ENVIRONMENT=Production
+    volumes:
+      - ./Post.Cmd.Api:/app # Adjust the source path as needed
+
+  post_query_api:
+    image: mcr.microsoft.com/dotnet/aspnet:6.0
+    container_name: post_query_api
+    build:
+      context: .
+      dockerfile: dockerfile-post-query-api # Specify the path to the Dockerfile for Post.Query.Api
+    ports:
+      - "8011:80" # Adjust the host port as needed
+    # environment:
+    #   - ASPNETCORE_ENVIRONMENT=Production
+    volumes:
+      - ./Post.Query.Api:/app # Adjust the source path as needed
+    depends_on:
+      - post_cmd_api

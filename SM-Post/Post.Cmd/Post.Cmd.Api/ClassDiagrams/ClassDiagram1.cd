@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Post.Cmd.Api.Commands.AddCommentCommand" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\AddCommentCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.DeletePostCommand">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DeletePostCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.EditCommentCommand">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\EditCommentCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.EditMessageCommand" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Commands\EditMessageCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.LikePostCommand">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\LikePostCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.NewPostCommand">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Commands\NewPostCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Post.Cmd.Api.Commands.RemoveCommentCommand">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RemoveCommentCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CQRS.Core.Commands.BaseCommand" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Post.Cmd.Domain.Aggregates.PostAggregate" Collapsed="true">
+    <Position X="5.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Post.Cmd.Infrastructure.Repositories.EventStoreRepository">
+    <Position X="9.5" Y="6.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.898" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

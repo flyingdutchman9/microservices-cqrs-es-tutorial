@@ -1,0 +1,49 @@
+# Use the official Microsoft .NET SDK image to build the project
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /app
+
+# Adjust the COPY command to match the location of your csproj file
+COPY ["SM-Post/Post.Cmd/Post.Cmd.Api/*.csproj", "SM-Post/Post.Cmd/Post.Cmd.Api/"]
+RUN dotnet restore "SM-Post/Post.Cmd/Post.Cmd.Api/Post.Cmd.Api.csproj"
+
+# Copy the rest of your source code
+COPY SM-Post/Post.Cmd/Post.Cmd.Api/ ./SM-Post/Post.Cmd/Post.Cmd.Api/
+WORKDIR /app/SM-Post/Post.Cmd/Post.Cmd.Api
+RUN dotnet publish -c Release -o out
+
+# Generate the runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build-env /app/SM-Post/Post.Cmd/Post.Cmd.Api/out .
+EXPOSE 8010
+
+# Configure the application to listen on port 8010
+ENV ASPNETCORE_URLS=http://+:8010
+ENTRYPOINT ["dotnet", "Post.Cmd.Api.dll"]
+
+
+# # Use the official Microsoft .NET SDK image to build the project
+# FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+# WORKDIR /app
+
+# # Copy the csproj file and restore any dependencies (via NuGet)
+# COPY ["./Post.Cmd.Api.csproj", "Post.Cmd.Api/"]
+# RUN dotnet restore "Post.Cmd.Api.csproj"
+
+# # Copy the project files and build the release
+# COPY . .
+# WORKDIR "/app/Post.Cmd.Api"
+# RUN dotnet publish "Post.Cmd.Api/Post.Cmd.Api.csproj" -c Release -o /app/publish
+
+# # Build runtime image
+# FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# WORKDIR /app
+# COPY --from=build-env /app/publish .
+
+# # Set the environment variable for the application's port
+# ENV ASPNETCORE_URLS=http://*:8010
+
+# # Expose the port the application will listen on
+# EXPOSE 8010
+
+# ENTRYPOINT ["dotnet", "Post.Cmd.Api.dll"]

@@ -1,0 +1,22 @@
+# Use the official Microsoft .NET SDK image to build the project
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /app
+
+# Adjust the COPY command to match the location of your csproj file
+COPY ["SM-Post/Post.Query/Post.Query.Api/*.csproj", "SM-Post/Post.Query/Post.Query.Api/"]
+RUN dotnet restore "SM-Post/Post.Query/Post.Query.Api/Post.Query.Api.csproj"
+
+# Copy the rest of your source code
+COPY SM-Post/Post.Query/Post.Query.Api/ ./SM-Post/Post.Query/Post.Query.Api/
+WORKDIR /app/SM-Post/Post.Query/Post.Query.Api
+RUN dotnet publish -c Release -o out
+
+# Generate the runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build-env /app/SM-Post/Post.Query/Post.Query.Api/out .
+EXPOSE 8011
+
+# Configure the application to listen on port 8010
+ENV ASPNETCORE_URLS=http://+:8011
+ENTRYPOINT ["dotnet", "Post.Query.Api.dll"]
